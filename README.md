@@ -1,8 +1,12 @@
-This is a Giter8 template for Freestyle projects.
+#Freestyle-seed
+
+This is a Giter8 template with the necessary for a Freestyle project.
+
+The template include a `Hello World` with the desirable algebra structure 
 
 ## Creating New Freestyle Project
 
-1. Create a new project from Freestyle g8 template:
+1. Create a new project from Freestyle g8 seed template:
 
 ```scala
 sbt new frees-io/freestyle-seed.g8
@@ -19,24 +23,11 @@ projectDescription [Project Description]: RPC with Freestyle
 project [project-name]: freestyle-rpc
 package [freestyle]:
 Skipping existing file: ./freestyle-rpc/.gitignore
-Skipping existing file: ./freestyle-rpc/.scalafmt.conf
 
 Template applied in ./freestyle-rpc
 ```
 
 The new project will be created in the `test` folder.
-
-3. Create the organization files, to do so, from the project folder, you could just run:
-
-```scala
-sbt orgCreateFiles
-```
-
-4. Verify that everything is correctly configured:
-
-```scala
-sbt orgScriptCI
-```
 
 Template license
 ----------------
