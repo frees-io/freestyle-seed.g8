@@ -1,3 +1,5 @@
+addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M8" cross CrossVersion.full)
+
 lazy val root = project
   .in(file("."))
   .settings(name := "$project$")
