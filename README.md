@@ -1,4 +1,4 @@
-#Freestyle-seed
+# Freestyle-seed
 
 This is a Giter8 template with the necessary for a Freestyle project.
 
