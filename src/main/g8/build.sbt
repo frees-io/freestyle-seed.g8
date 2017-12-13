@@ -1,17 +1,16 @@
-addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M8" cross CrossVersion.full)
+lazy val freesV = "$freesVersion$"
 
-lazy val root = project
+lazy val `$project$` = project
   .in(file("."))
   .settings(name := "$project$")
-  .settings(moduleName := "root")
-  .aggregate(`$project$JS`, `$project$JVM`)
-  .settings(Seq(
-    libraryDependencies ++= Seq("io.frees" %%% "freestyle" % "0.3.0")): _*)
-
-lazy val `$project$` = crossProject
-  .in(file("$project$"))
   .settings(moduleName := "$project$")
-  .jsSettings(sharedJsSettings: _*)
-
-lazy val `$project$JVM` = `$project$`.jvm
-lazy val `$project$JS` = `$project$`.js
+  .settings(description := "$projectDescription$")
+  .settings(
+    addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M10" cross CrossVersion.full),
+    libraryDependencies ++= Seq(
+      "io.frees" %% "frees-core" % freesV,
+      "org.scalameta" %% "scalameta" % "1.8.0"
+    ),
+    scalacOptions += "-Xplugin-require:macroparadise",
+    scalacOptions in (Compile, console) ~= (_ filterNot (_ contains "paradise")) // macroparadise plugin doesn't work in repl yet.
+  )
